@@ -29,7 +29,7 @@ export class List<T> {
     return new List<U>(resultElements);
   }
 
-  reduce(f: (a: T, b: T) => T): T {
+  reduce(f: (accumulator: T, element: T) => T): T {
     if(this.elements.length === 1){
       return this.elements[0];
     }
@@ -44,7 +44,7 @@ export class List<T> {
     return result;
   }
 
-  fold<U>(f: (a: U, b: T) => U, initialValue: U): U {
+  fold<U>(f: (accumulator: U, element: T) => U, initialValue: U): U {
     let result: U  = initialValue;
 
     for(let i = 0; i < this.elements.length; i++) {
