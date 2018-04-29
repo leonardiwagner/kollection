@@ -13,8 +13,8 @@
   },
   "scripts": {
     "build": "NODE_PATH=. tsc -p .",
-    "test:mocha": "NODE_PATH=. mocha built/*.test.js",
-    "test": "npm run build && npm run test:mocha"
+    "test": "npm run build && NODE_PATH=. mocha built/*.test.js",
+    "test:debug": "npm run build && NODE_PATH=. mocha --inspect-brk built/*.test.js"
   },
   "repository": {
     "type": "git",
